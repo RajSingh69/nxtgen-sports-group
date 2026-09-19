@@ -1,0 +1,114 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Book a speaker through NXT Gen Speaking.">
+  <title>Book a Speaker | NXT Gen Speaking</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="booking-page">
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="./"><span class="brand-mark">NG</span><span>NXT GEN SPEAKING</span></a>
+    <button class="nav-toggle" aria-label="Open navigation">Menu</button>
+    <nav class="nav-links">
+      <a href="./">Speaking</a>
+      <a href="./#speakers">Speakers</a>
+      <a href="../">NXT Gen</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section booking-hero">
+    <div class="container">
+      <a class="back-link" href="./">&larr; NXT Gen Speaking</a>
+      <div class="booking-layout">
+        <div class="booking-intro reveal-on-scroll">
+          <p class="eyebrow">Booking Enquiry</p>
+          <h1>Tell us about the room.</h1>
+          <p class="lead">Share the event, audience and objectives. This front-end enquiry form remains static and is not connected to a backend yet.</p>
+          <div class="booking-notes">
+            <span>Audience</span><span>Objectives</span><span>Date</span><span>Location</span><span>Format</span>
+          </div>
+        </div>
+
+        <div class="form-shell reveal-on-scroll">
+          <form id="booking-form">
+            <div class="form-grid">
+              <label>Name<input name="name" required></label>
+              <label>Organisation<input name="organisation"></label>
+              <label>Work Email<input name="email" type="email" required></label>
+              <label>Phone<input name="phone" type="tel"></label>
+              <label>Event Name<input name="eventName"></label>
+              <label>Event Date<input name="eventDate" type="date"></label>
+              <label>Location<input name="location"></label>
+              <label>Audience Size<input name="audienceSize" type="number" min="1"></label>
+              <label>Speaker
+                <select name="speaker">
+                  <option value="sunny-singh-gill">Sunny Singh Gill</option>
+                  <option value="roopa-vyas">Roopa Vyas</option>
+                  <option value="not-sure">Not sure yet</option>
+                </select>
+              </label>
+              <label>Format
+                <select name="format">
+                  <option>Keynote</option>
+                  <option>Keynote + Q&A</option>
+                  <option>Leadership Masterclass</option>
+                  <option>Executive Leadership Day</option>
+                  <option value="not-sure">Not sure yet</option>
+                </select>
+              </label>
+              <label>Topic
+                <select name="topic">
+                  <option>Breaking Barriers</option>
+                  <option>Leading Under Pressure</option>
+                  <option>The Human Side of Leadership</option>
+                  <option>Inclusive Leadership</option>
+                  <option>Women in Football</option>
+                  <option>Beyond Performative Inclusion</option>
+                  <option>Belonging &amp; Representation</option>
+                  <option>Tackling Sexism and Misogyny</option>
+                  <option>Creating Inclusive Organisations</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+              <label>Estimated Budget<input name="budget" placeholder="e.g. &pound;3,000-&pound;5,000"></label>
+              <label class="full">Event / audience objectives<textarea name="objectives" placeholder="What should the audience think, feel or do differently afterwards?"></textarea></label>
+              <label class="full">Additional information<textarea name="message" placeholder="Timings, event style, accessibility needs, logistics or anything else NXT Gen should know."></textarea></label>
+            </div>
+            <button class="btn primary" type="submit">Request Availability</button>
+            <p class="small-note" id="form-note">Demo only - connect this form before production launch.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>&copy; <span data-year></span> NXT Gen Sports Group</span>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+const speakerParam = new URLSearchParams(window.location.search).get('speaker');
+if (speakerParam) {
+  const speakerSelect = document.querySelector('select[name="speaker"]');
+  if (speakerSelect) speakerSelect.value = speakerParam;
+}
+document.getElementById('booking-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('form-note').textContent =
+    'Demo submission captured in the browser only. Connect a backend before launch.';
+});
+</script>
+</body>
+</html>
+
+
+
+
