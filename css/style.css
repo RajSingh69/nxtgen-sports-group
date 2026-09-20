@@ -1,4 +1,14 @@
-﻿:root{
+:root{
+  --nxt-snow:#F9F5F5;
+  --nxt-alabaster:#E7DFE0;
+  --nxt-crimson:#931621;
+  --nxt-mauve:#472836;
+  --nxt-copper:#CD5334;
+  --nxt-slate:#28464B;
+  --nxt-teal:#326771;
+  --nxt-cyan:#2C8C99;
+  --nxt-ice:#34E4EA;
+  --nxt-blue:#065A82;
   --bg:#060708;
   --bg-soft:#101316;
   --ink:#f7f2e8;
@@ -2055,3 +2065,1820 @@ p,li{line-height:var(--ui-line);text-wrap:pretty}.lead,.hero-kicker{font-size:cl
 .contact-hero,.blog-hero{background:linear-gradient(135deg,#070808,#11100d 58%,#241d10);padding:clamp(84px,8vw,112px) 0 var(--ui-section-tight);border-bottom:1px solid rgba(255,255,255,.12)}.contact-hero-inner,.blog-hero-inner{max-width:760px}.contact-hero h1,.blog-hero h1{font-size:var(--ui-hero-h1);line-height:.95;max-width:13ch}.contact-hero p,.blog-hero p{font-size:var(--ui-body);line-height:1.6;max-width:62ch;color:#e7ded0}.contact-methods-section,.blog-listing-section{padding:var(--ui-section) 0;background:#f2eadf;color:#111}.contact-methods-wrap{display:grid;grid-template-columns:.36fr .64fr;gap:var(--ui-gap);align-items:start}.contact-section-head h2,.blog-section-head h2{font-size:var(--ui-section-h2);line-height:1;max-width:12ch}.contact-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.contact-card-grid article,.blog-card{background:#fffaf1;border:1px solid rgba(0,0,0,.15);border-radius:8px;padding:var(--ui-card-pad);box-shadow:0 20px 55px rgba(0,0,0,.08)}.contact-card-grid h3,.blog-card h3{font-size:var(--ui-card-h);line-height:1.12;text-transform:uppercase}.contact-card-grid p,.blog-card p{font-size:var(--ui-body-sm);line-height:1.62;color:#514a43}.contact-card-grid a{display:inline-block;margin-top:8px;color:#111;font-weight:950;border-bottom:2px solid #8b6a22;overflow-wrap:anywhere}.blog-card-grid{display:grid;grid-template-columns:minmax(0,760px);gap:16px}.blog-card{display:grid;grid-template-columns:minmax(220px,.42fr) minmax(0,.58fr);gap:var(--ui-gap);align-items:center}.blog-card-media{display:block;overflow:hidden;border-radius:8px;background:#111;aspect-ratio:16/10}.blog-card-media img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}.blog-card:hover .blog-card-media img{transform:scale(1.025)}.blog-source{margin:0 0 10px;color:#8b6a22!important;font-size:var(--ui-label)!important;font-weight:950;text-transform:uppercase;letter-spacing:.13em}.blog-card h3 a{border-bottom:0}.blog-card .text-arrow{color:#111;margin-top:8px}.home-blog-preview{background:#f2eadf;color:#111}.home-blog-copy{grid-column:1/span 5}.home-blog-copy h2{color:#111}.home-blog-copy p{color:#514a43;max-width:58ch}.home-blog-card{grid-column:7/span 6;display:grid;gap:10px;align-content:center;min-height:150px;background:#fffaf1;border:1px solid rgba(0,0,0,.15);border-radius:8px;padding:var(--ui-card-pad);transition:transform .24s ease,border-color .24s ease}.home-blog-card:hover{transform:translateY(-3px);border-color:rgba(139,106,34,.55)}.home-blog-card span{color:#8b6a22;font-size:var(--ui-label);font-weight:950;text-transform:uppercase;letter-spacing:.13em}.home-blog-card strong{font-size:var(--ui-card-h);line-height:1.12;text-transform:uppercase;color:#111}.home-blog-card em{font-style:normal;font-weight:950;text-transform:uppercase;border-bottom:2px solid #8b6a22;width:max-content}.nxt-footer nav a[href^="mailto:"]{overflow-wrap:anywhere}
 @media(max-width:1080px){.contact-methods-wrap,.blog-card{grid-template-columns:1fr}.home-blog-copy,.home-blog-card{grid-column:1/-1}.blog-card-grid{grid-template-columns:1fr}.blog-card-media{max-width:520px}}
 @media(max-width:760px){.contact-hero,.blog-hero{padding-top:76px;padding-bottom:44px}.contact-card-grid{grid-template-columns:1fr}.blog-card-media{max-width:none}.home-blog-card{min-height:0}.contact-card-grid article,.blog-card,.home-blog-card{padding:20px}}
+
+/* NXT Gen 2026 colour system: scoped away from individual speaker profile pages */
+.home-grid-v2,
+.content-page,
+.speaking-balanced,
+.booking-page {
+  --color-background: var(--nxt-snow);
+  --color-surface: var(--nxt-alabaster);
+  --color-text: var(--nxt-slate);
+  --color-text-muted: #49656a;
+  --color-primary: var(--nxt-slate);
+  --color-secondary: var(--nxt-teal);
+  --color-accent: var(--nxt-cyan);
+  --color-strong: var(--nxt-crimson);
+  --color-warm: var(--nxt-copper);
+  --color-border: rgba(40,70,75,.18);
+  --color-border-light: rgba(249,245,245,.18);
+  --color-dark-muted: rgba(249,245,245,.74);
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.home-grid-v2 .eyebrow,
+.home-grid-v2 .section-kicker,
+.content-page .eyebrow,
+.speaking-balanced .eyebrow,
+.booking-page .eyebrow,
+.blog-source,
+.home-blog-card span {
+  color: var(--color-accent);
+}
+
+.home-grid-v2 a:focus-visible,
+.content-page a:focus-visible,
+.speaking-balanced a:focus-visible,
+.booking-page a:focus-visible,
+.home-grid-v2 button:focus-visible,
+.content-page button:focus-visible,
+.speaking-balanced button:focus-visible,
+.booking-page button:focus-visible,
+.home-grid-v2 input:focus-visible,
+.content-page input:focus-visible,
+.booking-page input:focus-visible,
+.home-grid-v2 textarea:focus-visible,
+.content-page textarea:focus-visible,
+.booking-page textarea:focus-visible,
+.home-grid-v2 select:focus-visible,
+.content-page select:focus-visible,
+.booking-page select:focus-visible {
+  outline: 3px solid var(--nxt-ice);
+  outline-offset: 4px;
+}
+
+.brand-header,
+.balanced-header,
+.content-page .site-header,
+.home-v2-header,
+.home-v2-header.is-scrolled {
+  background: rgba(40,70,75,.94);
+  border-bottom-color: rgba(249,245,245,.16);
+}
+
+.home-v2-header {
+  background: linear-gradient(180deg,rgba(40,70,75,.92),rgba(40,70,75,.42));
+}
+
+.home-grid-v2 .nav-links a,
+.content-page .nav-links a,
+.speaking-balanced .nav-links a,
+.booking-page .nav-links a,
+.home-v2-header .nav-links a,
+.header-social a {
+  color: var(--nxt-snow);
+}
+
+.home-grid-v2 .nav-links a:hover,
+.content-page .nav-links a:hover,
+.speaking-balanced .nav-links a:hover,
+.booking-page .nav-links a:hover,
+.home-v2-header .nav-links a:hover,
+.header-social a:hover,
+.home-v2-header .nav-cta,
+.home-v2-header .nav-cta:hover {
+  color: var(--nxt-ice);
+}
+
+.home-v2-header .nav-cta,
+.home-grid-v2 .nav-toggle,
+.content-page .nav-toggle,
+.speaking-balanced .nav-toggle,
+.booking-page .nav-toggle {
+  border-color: rgba(44,140,153,.65);
+}
+
+.home-v2-header .nav-cta:hover {
+  background: rgba(44,140,153,.16);
+  border-color: var(--nxt-ice);
+}
+
+.home-grid-v2 .btn.primary,
+.content-page .btn.primary,
+.speaking-balanced .btn.primary,
+.booking-page .btn.primary,
+.nxt-contact-actions a,
+.content-cta .btn.primary {
+  background: var(--nxt-crimson);
+  border-color: var(--nxt-crimson);
+  color: var(--nxt-snow);
+  box-shadow: none;
+}
+
+.home-grid-v2 .btn.secondary,
+.content-page .btn.secondary,
+.speaking-balanced .btn.secondary,
+.booking-page .btn.secondary {
+  background: rgba(249,245,245,.08);
+  border-color: rgba(249,245,245,.34);
+  color: var(--nxt-snow);
+}
+
+.mission-section .btn.secondary,
+.service-offerings .btn.secondary,
+.contact-methods-section .btn.secondary,
+.blog-listing-section .btn.secondary,
+.why-v2 .btn.secondary,
+.what-section .btn.secondary,
+.home-blog-preview .btn.secondary,
+.balanced-intro .btn.secondary,
+.balanced-values .btn.secondary {
+  color: var(--nxt-slate);
+  border-color: rgba(40,70,75,.35);
+  background: rgba(249,245,245,.62);
+}
+
+.home-grid-v2 .btn:hover,
+.content-page .btn:hover,
+.speaking-balanced .btn:hover,
+.booking-page .btn:hover {
+  border-color: var(--nxt-cyan);
+}
+
+.hero-media-stack:after,
+.content-hero-media:after,
+.nxt-hero:after {
+  background:
+    linear-gradient(90deg,rgba(40,70,75,.94),rgba(40,70,75,.62) 50%,rgba(40,70,75,.26)),
+    linear-gradient(0deg,rgba(40,70,75,.72),transparent 52%);
+}
+
+.home-progress span,
+.home-section-rail a.is-active {
+  background: var(--nxt-cyan);
+  border-color: var(--nxt-cyan);
+  color: var(--nxt-slate);
+  box-shadow: none;
+}
+
+.hero-division-line span,
+.hero-proof strong,
+.balanced-speakers .balanced-section-head p,
+.person-card-v2 p,
+.balanced-speaker span,
+.speaking-equal-speaker span,
+.decision-routes-v2 span,
+.hr-video-card span {
+  color: var(--nxt-cyan);
+}
+
+.hero-proof div,
+.person-card-v2,
+.balanced-speaker,
+.speaking-equal-speaker,
+.decision-routes-v2 a,
+.contact-card-grid article,
+.blog-card,
+.home-blog-card,
+.values-card-grid article,
+.services-grid article,
+.edi-story-grid article,
+.edi-mini-grid article,
+.home-edi-points article,
+.pillar-grid article,
+.reason-list-v2 article,
+.proof-grid > *,
+.logo-word-grid span,
+.balanced-theme-matrix article,
+.balanced-process-line article {
+  border-color: var(--color-border);
+}
+
+.what-section,
+.why-v2,
+.balanced-intro,
+.balanced-values,
+.mission-section,
+.service-offerings,
+.edi-closing-section,
+.contact-methods-section,
+.blog-listing-section,
+.home-blog-preview {
+  background: var(--nxt-snow);
+  color: var(--nxt-slate);
+}
+
+.what-section p,
+.why-v2 p,
+.balanced-intro p,
+.balanced-values p,
+.mission-layout p,
+.services-grid p,
+.contact-card-grid p,
+.blog-card p,
+.home-blog-copy p,
+.edi-closing-card p,
+.values-card-grid p {
+  color: var(--color-text-muted);
+}
+
+.pillar-grid,
+.proof-grid,
+.reason-list-v2,
+.logo-word-grid,
+.balanced-keywords,
+.balanced-room-list,
+.speak-get-list,
+.event-list {
+  background: rgba(40,70,75,.18);
+}
+
+.pillar-grid article,
+.reason-list-v2 article,
+.values-card-grid article,
+.services-grid article,
+.contact-card-grid article,
+.blog-card,
+.home-blog-card,
+.logo-word-grid span,
+.proof-grid > * {
+  background: rgba(249,245,245,.88);
+}
+
+.pillar-grid article:hover,
+.reason-list-v2 article:hover,
+.values-card-grid article:hover,
+.services-grid article:hover,
+.contact-card-grid article:hover,
+.home-blog-card:hover {
+  background: #fff;
+  border-color: rgba(44,140,153,.55);
+}
+
+.proof-band,
+.recognition-v2,
+.nxt-people,
+.speak-speakers,
+.speak-why {
+  background: var(--nxt-alabaster);
+  color: var(--nxt-slate);
+}
+
+.proof-grid strong,
+.proof-grid span,
+.logo-word-grid span,
+.pillar-grid span,
+.reason-list-v2 strong,
+.reason-list-v2 span,
+.balanced-keywords span,
+.balanced-room-list span,
+.nxt-people-strip a,
+.home-blog-card strong,
+.blog-card h3,
+.contact-card-grid h3 {
+  color: var(--nxt-slate);
+}
+
+.reason-list-v2 span,
+.values-card-grid span,
+.services-grid span,
+.edi-story-grid span,
+.home-edi-points span,
+.card-link,
+.contact-card-grid a,
+.blog-source,
+.home-blog-card span,
+.home-blog-card em,
+.text-arrow {
+  color: var(--nxt-crimson);
+  border-color: currentColor;
+}
+
+.sports-v2,
+.balanced-speakers,
+.speaking-balanced-speakers,
+.speaking-themes-balanced,
+.speaking-process-balanced,
+.about-edi-section,
+.ceo-section,
+.edi-story-section,
+.home-edi-preview,
+.contact-hero,
+.blog-hero {
+  background: var(--nxt-slate);
+  color: var(--nxt-snow);
+}
+
+.sports-v2 p,
+.balanced-speakers p,
+.speaking-balanced-speakers p,
+.speaking-themes-balanced p,
+.speaking-process-balanced p,
+.about-edi-section p,
+.ceo-message p,
+.edi-story-grid p,
+.edi-story-grid li,
+.home-edi-points p,
+.contact-hero p,
+.blog-hero p,
+.service-copy > p,
+.service-list span {
+  color: var(--color-dark-muted);
+}
+
+.speaking-v2,
+.speaking-balanced-hero,
+.speaking-audience-balanced,
+.speaking-why-balanced,
+.speak-process,
+.speak-feature-strip,
+.activity-strip-v2 {
+  background: var(--nxt-teal);
+  color: var(--nxt-snow);
+}
+
+.speaking-v2 p,
+.speaking-balanced-hero p,
+.speaking-audience-balanced p,
+.speaking-why-balanced p,
+.speak-process p,
+.feature-strip-item p {
+  color: rgba(249,245,245,.78);
+}
+
+.speaking-v2 .section-kicker,
+.speaking-v2 .text-arrow,
+.speaking-balanced-hero .eyebrow,
+.speaking-audience-balanced .eyebrow,
+.speaking-why-balanced .eyebrow,
+.speak-steps span,
+.feature-strip-item span,
+.service-list strong {
+  color: var(--nxt-ice);
+}
+
+.service-list,
+.service-list article,
+.format-grid,
+.format-grid span,
+.balanced-process-line,
+.balanced-process-line article,
+.balanced-theme-matrix,
+.balanced-theme-matrix article {
+  border-color: rgba(249,245,245,.2);
+}
+
+.stage-device,
+.stage-visual {
+  background:
+    radial-gradient(circle at 50% 20%,rgba(52,228,234,.2),transparent 18%),
+    linear-gradient(135deg,var(--nxt-mauve),var(--nxt-slate));
+}
+
+.stage-device:before,
+.stage-visual:before {
+  background: rgba(52,228,234,.46);
+  box-shadow: 0 -105px 160px rgba(44,140,153,.22);
+}
+
+.stage-device span {
+  background: linear-gradient(var(--nxt-ice),transparent);
+  box-shadow: -110px 42px 0 rgba(52,228,234,.16), 110px 42px 0 rgba(52,228,234,.16);
+}
+
+.sports-collage img,
+.activity-track img,
+.content-hero-media img,
+.hero-main-img,
+.person-card-v2 img,
+.balanced-speaker img,
+.speaking-equal-speaker img {
+  filter: saturate(1.02) contrast(1.04);
+}
+
+.sport-visual,
+.balanced-sport-visual {
+  background: linear-gradient(135deg,var(--nxt-slate),var(--nxt-teal));
+}
+
+.sport-visual:before,
+.balanced-sport-visual:before {
+  border-color: rgba(249,245,245,.2);
+  box-shadow: 0 -70px 120px rgba(44,140,153,.22);
+}
+
+.person-card-v2.sunny div,
+.balanced-speaker.sunny > div,
+.speaking-equal-speaker.sunny > div,
+.speak-speaker-half.sunny div {
+  background: linear-gradient(135deg,var(--nxt-slate),#1d3438);
+}
+
+.person-card-v2.roopa div,
+.balanced-speaker.roopa > div,
+.speaking-equal-speaker.roopa > div,
+.speak-speaker-half.roopa div {
+  background: linear-gradient(135deg,var(--nxt-mauve),var(--nxt-crimson));
+}
+
+.person-card-v2 span,
+.balanced-speaker span,
+.speaking-equal-speaker span,
+.person-card-v2 p,
+.balanced-speaker p,
+.speaking-equal-speaker p {
+  color: rgba(249,245,245,.82);
+}
+
+.person-card-v2 p,
+.balanced-speaker span,
+.speaking-equal-speaker span {
+  color: var(--nxt-ice);
+}
+
+.recognition-grid p,
+.nxt-section-head p:not(.eyebrow),
+.speak-section-head p:not(.eyebrow),
+.balanced-section-head p:not(.eyebrow),
+.contact-section-head p,
+.blog-section-head p {
+  color: var(--color-text-muted);
+}
+
+.final-decision-v2,
+.nxt-contact,
+.content-cta,
+.speaking-book-balanced,
+.speak-book,
+.balanced-contact {
+  background: var(--nxt-crimson);
+  color: var(--nxt-snow);
+}
+
+.final-decision-v2 h2,
+.nxt-contact h2,
+.content-cta h2,
+.speaking-book-balanced h2,
+.speak-book h2,
+.balanced-contact h2 {
+  color: var(--nxt-snow);
+}
+
+.final-decision-v2 p,
+.nxt-contact p,
+.content-cta p,
+.speaking-book-balanced p,
+.speak-book p,
+.balanced-contact p {
+  color: rgba(249,245,245,.82);
+}
+
+.decision-routes-v2 a,
+.hr-final-routes a,
+.speaking-book-balanced .btn.secondary,
+.speak-book .btn.secondary,
+.balanced-contact .btn.secondary,
+.content-cta .btn.secondary {
+  background: rgba(40,70,75,.94);
+  border-color: rgba(249,245,245,.18);
+  color: var(--nxt-snow);
+}
+
+.decision-routes-v2 span,
+.hr-final-routes span {
+  color: var(--nxt-ice);
+}
+
+.home-grid-v2 .nxt-footer,
+.content-page .nxt-footer,
+.speaking-balanced .nxt-footer,
+.booking-page footer,
+.home-v2-footer {
+  background: var(--nxt-slate);
+  color: var(--nxt-alabaster);
+  border-top-color: rgba(249,245,245,.14);
+}
+
+.home-grid-v2 .nxt-footer p,
+.home-grid-v2 .nxt-footer a,
+.home-grid-v2 .nxt-footer nav span,
+.home-grid-v2 .nxt-footer-bottom,
+.content-page .nxt-footer p,
+.content-page .nxt-footer a,
+.content-page .nxt-footer nav span,
+.content-page .nxt-footer-bottom,
+.speaking-balanced .nxt-footer p,
+.speaking-balanced .nxt-footer a,
+.speaking-balanced .nxt-footer nav span,
+.speaking-balanced .nxt-footer-bottom,
+.booking-page footer,
+.home-grid-v2 .small-note,
+.content-page .small-note,
+.speaking-balanced .small-note,
+.booking-page .small-note {
+  color: rgba(231,223,224,.78);
+}
+
+.home-grid-v2 .nxt-footer strong,
+.home-grid-v2 .nxt-footer a:hover,
+.content-page .nxt-footer strong,
+.content-page .nxt-footer a:hover,
+.speaking-balanced .nxt-footer strong,
+.speaking-balanced .nxt-footer a:hover {
+  color: var(--nxt-snow);
+}
+
+.home-grid-v2 .nxt-footer a:hover,
+.content-page .nxt-footer a:hover,
+.speaking-balanced .nxt-footer a:hover,
+.booking-page footer a:hover {
+  color: var(--nxt-ice);
+}
+
+.home-grid-v2 input,
+.home-grid-v2 textarea,
+.home-grid-v2 select,
+.home-grid-v2 .form-shell,
+.content-page input,
+.content-page textarea,
+.content-page select,
+.content-page .form-shell,
+.speaking-balanced input,
+.speaking-balanced textarea,
+.speaking-balanced select,
+.speaking-balanced .form-shell,
+.booking-page input,
+.booking-page textarea,
+.booking-page select,
+.booking-page .form-shell {
+  border-color: rgba(40,70,75,.22);
+}
+
+.booking-page input,
+.booking-page textarea,
+.booking-page select,
+.content-page input,
+.content-page textarea,
+.content-page select {
+  background: rgba(249,245,245,.96);
+  color: var(--nxt-slate);
+}
+
+.booking-page label,
+.content-page label {
+  color: var(--nxt-slate);
+}
+
+.booking-hero,
+.booking-destination {
+  background: var(--nxt-snow);
+  color: var(--nxt-slate);
+}
+
+.booking-intro .lead,
+.booking-final p {
+  color: var(--color-text-muted);
+}
+
+@media(max-width:1240px) {
+  .home-grid-v2 .nav-links,
+  .content-page .nav-links,
+  .speaking-balanced .nav-links,
+  .booking-page .nav-links {
+    background: var(--nxt-slate);
+    border-color: rgba(249,245,245,.16);
+  }
+}
+
+@media(max-width:760px) {
+  .home-grid-v2,
+  .content-page,
+  .speaking-balanced,
+  .booking-page {
+    --color-border: rgba(40,70,75,.16);
+  }
+
+  .hero-proof div,
+  .pillar-grid article,
+  .reason-list-v2 article,
+  .values-card-grid article,
+  .services-grid article,
+  .contact-card-grid article,
+  .blog-card,
+  .home-blog-card {
+    box-shadow: none;
+  }
+}
+
+/* NXT Gen readability, header and motion polish pass */
+.home-grid-v2,
+.content-page,
+.speaking-balanced,
+.booking-page {
+  --motion-ease: cubic-bezier(.22,.61,.36,1);
+  --motion-fast: 220ms;
+  --motion-med: 720ms;
+  --header-height: clamp(78px, 7vw, 94px);
+}
+
+.home-grid-v2 .site-header,
+.content-page .site-header.brand-header,
+.speaking-balanced .site-header.brand-header,
+.booking-page .site-header {
+  min-height: var(--header-height);
+  background: rgba(40,70,75,.96);
+  border-bottom: 1px solid rgba(249,245,245,.16);
+  box-shadow: 0 16px 38px rgba(20,35,38,.18);
+}
+
+.home-grid-v2 .nav,
+.content-page .nav,
+.speaking-balanced .nav,
+.booking-page .nav,
+.home-v2-header .nav {
+  min-height: var(--header-height);
+  align-items: center;
+}
+
+.home-v2-header {
+  position: fixed;
+  background: linear-gradient(180deg,rgba(40,70,75,.96),rgba(40,70,75,.82));
+  backdrop-filter: blur(14px);
+}
+
+.home-v2-header.is-scrolled {
+  background: rgba(40,70,75,.98);
+}
+
+.home-v2-logo,
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: calc(var(--header-height) - 18px);
+}
+
+.home-v2-logo img,
+.brand-logo img {
+  width: clamp(112px, 9vw, 150px);
+  max-height: calc(var(--header-height) - 24px);
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  filter: brightness(0) invert(1);
+}
+
+.home-v2-header .home-v2-logo img {
+  width: clamp(124px, 10vw, 164px);
+  margin: 0;
+  box-shadow: none;
+}
+
+.home-grid-v2 .nav-links a,
+.content-page .nav-links a,
+.speaking-balanced .nav-links a,
+.booking-page .nav-links a {
+  position: relative;
+  padding: 10px 0;
+  color: var(--nxt-snow);
+  transition: color var(--motion-fast) ease;
+}
+
+.home-grid-v2 .nav-links a::after,
+.content-page .nav-links a::after,
+.speaking-balanced .nav-links a::after,
+.booking-page .nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  height: 2px;
+  background: var(--nxt-ice);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--motion-fast) ease;
+}
+
+.home-grid-v2 .nav-links a:hover,
+.content-page .nav-links a:hover,
+.speaking-balanced .nav-links a:hover,
+.booking-page .nav-links a:hover,
+.home-grid-v2 .nav-links a[aria-current="page"],
+.content-page .nav-links a[aria-current="page"],
+.speaking-balanced .nav-links a[aria-current="page"],
+.booking-page .nav-links a[aria-current="page"] {
+  color: var(--nxt-ice);
+}
+
+.home-grid-v2 .nav-links a:hover::after,
+.content-page .nav-links a:hover::after,
+.speaking-balanced .nav-links a:hover::after,
+.booking-page .nav-links a:hover::after,
+.home-grid-v2 .nav-links a[aria-current="page"]::after,
+.content-page .nav-links a[aria-current="page"]::after,
+.speaking-balanced .nav-links a[aria-current="page"]::after,
+.booking-page .nav-links a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.home-v2-header .nav-cta {
+  padding: 10px 12px;
+  border-color: rgba(249,245,245,.28);
+  background: var(--nxt-crimson);
+  color: var(--nxt-snow);
+}
+
+.home-v2-header .nav-cta::after {
+  display: none;
+}
+
+.home-v2-header .nav-cta:hover {
+  background: #7e111b;
+  color: var(--nxt-snow);
+  transform: translateY(-1px);
+}
+
+.home-v2-hero {
+  color: var(--nxt-snow);
+  background: var(--nxt-slate);
+}
+
+.home-v2-hero .hero-media-stack:after {
+  background:
+    linear-gradient(90deg,rgba(40,70,75,.97) 0%,rgba(40,70,75,.82) 38%,rgba(40,70,75,.42) 68%,rgba(40,70,75,.14) 100%),
+    linear-gradient(0deg,rgba(40,70,75,.78),rgba(40,70,75,.08) 52%);
+}
+
+.home-v2-hero .hero-title,
+.home-v2-hero .hero-title span,
+.home-v2-hero .hero-lead,
+.home-v2-hero .hero-division-line {
+  color: var(--nxt-snow) !important;
+  text-shadow: 0 2px 18px rgba(0,0,0,.22);
+}
+
+.home-v2-hero .eyebrow,
+.home-v2-hero .hero-division-line span {
+  color: var(--nxt-ice) !important;
+}
+
+.home-v2-hero .hero-proof div {
+  background: rgba(40,70,75,.72);
+  border-color: rgba(249,245,245,.22);
+  box-shadow: 0 24px 56px rgba(0,0,0,.22);
+}
+
+.home-v2-hero .hero-proof strong {
+  color: var(--nxt-ice);
+}
+
+.home-v2-hero .hero-proof span {
+  color: var(--nxt-snow);
+}
+
+.content-hero h1,
+.content-hero p,
+.edi-editorial-hero h1,
+.edi-editorial-hero p,
+.contact-hero h1,
+.blog-hero h1,
+.contact-hero p,
+.blog-hero p {
+  color: var(--nxt-snow);
+  text-shadow: 0 2px 16px rgba(0,0,0,.18);
+}
+
+.content-hero .eyebrow,
+.edi-editorial-hero .eyebrow,
+.contact-hero .eyebrow,
+.blog-hero .eyebrow {
+  color: var(--nxt-ice);
+  text-shadow: none;
+}
+
+.content-hero-media:after {
+  background:
+    linear-gradient(90deg,rgba(40,70,75,.96) 0%,rgba(40,70,75,.78) 42%,rgba(40,70,75,.28) 74%,rgba(40,70,75,.1) 100%),
+    linear-gradient(0deg,rgba(40,70,75,.66),transparent 54%);
+}
+
+.services-hero .content-hero-media:after {
+  background:
+    linear-gradient(90deg,rgba(40,70,75,.98) 0%,rgba(40,70,75,.82) 45%,rgba(40,70,75,.38) 76%,rgba(40,70,75,.12) 100%),
+    linear-gradient(0deg,rgba(40,70,75,.78),transparent 50%);
+}
+
+.edi-editorial-hero {
+  background: linear-gradient(135deg,var(--nxt-slate),#203d42 58%,var(--nxt-mauve));
+}
+
+.edi-editorial-hero:after {
+  background: linear-gradient(90deg,transparent,rgba(44,140,153,.28),transparent);
+}
+
+.edi-hero-grid blockquote,
+.edi-story-grid blockquote {
+  background: var(--nxt-copper);
+  color: var(--nxt-snow);
+}
+
+.edi-story-section {
+  background: var(--nxt-slate);
+}
+
+.edi-story-grid article:not(.edi-lead-card) {
+  background: rgba(249,245,245,.06);
+  border-color: rgba(249,245,245,.16);
+  color: var(--nxt-snow);
+}
+
+.edi-story-grid article:not(.edi-lead-card) > span {
+  color: var(--nxt-ice);
+}
+
+.edi-story-grid article:not(.edi-lead-card) h2,
+.edi-story-grid article:not(.edi-lead-card) p,
+.edi-story-grid article:not(.edi-lead-card) li {
+  color: var(--nxt-snow);
+}
+
+.edi-story-grid article:not(.edi-lead-card) p,
+.edi-story-grid article:not(.edi-lead-card) li {
+  color: rgba(249,245,245,.82);
+}
+
+.edi-story-grid .edi-lead-card,
+.edi-closing-section {
+  background: var(--nxt-snow);
+  color: var(--nxt-slate);
+}
+
+.edi-lead-card p,
+.edi-closing-card p {
+  color: var(--nxt-slate);
+}
+
+.edi-closing-card .eyebrow {
+  color: var(--nxt-crimson);
+}
+
+.speaking-balanced-hero {
+  min-height: min(720px, calc(92vh - var(--header-height)));
+  background: var(--nxt-teal);
+  padding: clamp(76px, 8vw, 112px) 0;
+}
+
+.speaking-stage-visual {
+  background:
+    radial-gradient(circle at 72% 28%,rgba(52,228,234,.22),transparent 18%),
+    linear-gradient(135deg,var(--nxt-slate),var(--nxt-teal) 58%,var(--nxt-mauve));
+}
+
+.speaking-stage-visual:before {
+  left: 58%;
+  right: 8%;
+  bottom: 22%;
+  background: rgba(52,228,234,.42);
+  box-shadow: 0 -80px 120px rgba(44,140,153,.25);
+}
+
+.speaking-balanced-inner {
+  width: min(74vw,1250px);
+  max-width: none;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0,1.05fr) minmax(260px,.7fr);
+  align-items: center;
+  gap: clamp(32px,6vw,96px);
+  margin-left: auto;
+}
+
+.speaking-hero-copy {
+  max-width: 760px;
+}
+
+.speaking-balanced-hero h1,
+.speaking-balanced-hero h2,
+.speaking-balanced-hero p {
+  color: var(--nxt-snow);
+}
+
+.speaking-balanced-hero h2 {
+  display: grid;
+  gap: 4px;
+  color: var(--nxt-ice);
+}
+
+.speaking-balanced-hero h2 span:nth-child(3) {
+  color: var(--nxt-copper);
+}
+
+.speaking-balanced-hero p:not(.eyebrow) {
+  color: rgba(249,245,245,.84);
+}
+
+.speaking-hero-support {
+  position: relative;
+  min-height: 310px;
+  border-left: 1px solid rgba(249,245,245,.22);
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  padding-left: clamp(24px,4vw,54px);
+}
+
+.speaking-hero-support:before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 18%;
+  width: 3px;
+  height: 64%;
+  background: linear-gradient(var(--nxt-ice),var(--nxt-crimson));
+}
+
+.speaking-hero-support span {
+  display: block;
+  color: rgba(249,245,245,.9);
+  font-size: clamp(1.45rem,2.4vw,2.9rem);
+  line-height: 1;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.balanced-theme-matrix b,
+.balanced-process-line span,
+.speaking-equal-speaker p,
+.speaking-equal-speaker strong {
+  color: var(--nxt-ice);
+}
+
+.btn,
+.home-grid-v2 .btn,
+.content-page .btn,
+.speaking-balanced .btn,
+.booking-page .btn,
+.text-arrow,
+.card-link,
+.decision-routes-v2 a,
+.home-blog-card,
+.blog-card,
+.contact-card-grid article,
+.values-card-grid article,
+.services-grid article,
+.edi-story-grid article,
+.person-card-v2,
+.speaking-equal-speaker,
+.balanced-process-line article,
+.balanced-theme-matrix article {
+  transition: background-color var(--motion-fast) ease, border-color var(--motion-fast) ease, color var(--motion-fast) ease, transform var(--motion-fast) ease, box-shadow var(--motion-fast) ease;
+}
+
+.home-grid-v2 .btn:hover,
+.content-page .btn:hover,
+.speaking-balanced .btn:hover,
+.booking-page .btn:hover {
+  transform: translateY(-2px);
+}
+
+.card-link:hover,
+.text-arrow:hover,
+.speaking-equal-speaker:hover strong,
+.person-card-v2:hover em {
+  transform: translateX(4px);
+}
+
+.home-blog-card:hover,
+.blog-card:hover,
+.contact-card-grid article:hover,
+.values-card-grid article:hover,
+.services-grid article:hover,
+.edi-story-grid article:hover,
+.person-card-v2:hover,
+.speaking-equal-speaker:hover,
+.balanced-process-line article:hover,
+.balanced-theme-matrix article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(20,35,38,.14);
+}
+
+.blog-card:hover img,
+.person-card-v2:hover img,
+.speaking-equal-speaker:hover img,
+.balanced-speaker:hover img {
+  transform: scale(1.025);
+}
+
+.home-grid-v2 .home-v2-section,
+.content-page main > section,
+.speaking-balanced main > section,
+.booking-page main > section {
+  position: relative;
+}
+
+.home-grid-v2 .home-v2-section:before,
+.content-page main > section:before,
+.speaking-balanced main > section:before,
+.booking-page main > section:before {
+  content: "";
+  position: absolute;
+  left: max(18px,calc((100vw - var(--ui-container)) / 2));
+  top: 0;
+  width: min(160px,24vw);
+  height: 3px;
+  background: linear-gradient(90deg,var(--nxt-cyan),transparent);
+  transform: scaleX(.2);
+  transform-origin: left;
+  opacity: .45;
+  transition: transform 780ms var(--motion-ease), opacity 780ms var(--motion-ease);
+}
+
+.home-grid-v2 .home-v2-section:has(.is-visible):before,
+.content-page main > section:has(.is-visible):before,
+.speaking-balanced main > section:has(.is-visible):before,
+.booking-page main > section:has(.is-visible):before {
+  transform: scaleX(1);
+  opacity: .9;
+}
+
+html.js .home-grid-v2 .reveal,
+html.js .home-grid-v2 .reveal-up,
+html.js .home-grid-v2 .reveal-left,
+html.js .home-grid-v2 .reveal-right,
+html.js .home-grid-v2 .reveal-scale,
+html.js .home-grid-v2 .reveal-image,
+html.js .content-page .reveal,
+html.js .content-page .reveal-up,
+html.js .content-page .reveal-left,
+html.js .content-page .reveal-right,
+html.js .content-page .reveal-scale,
+html.js .content-page .reveal-image,
+html.js .speaking-balanced .reveal,
+html.js .speaking-balanced .reveal-up,
+html.js .speaking-balanced .reveal-left,
+html.js .speaking-balanced .reveal-right,
+html.js .speaking-balanced .reveal-scale,
+html.js .speaking-balanced .reveal-image,
+html.js .booking-page .reveal,
+html.js .booking-page .reveal-up,
+html.js .booking-page .reveal-left,
+html.js .booking-page .reveal-right,
+html.js .booking-page .reveal-scale,
+html.js .booking-page .reveal-image {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity var(--motion-med) var(--motion-ease), transform var(--motion-med) var(--motion-ease), clip-path 840ms var(--motion-ease);
+}
+
+html.js .home-grid-v2 .reveal-left,
+html.js .content-page .reveal-left,
+html.js .speaking-balanced .reveal-left,
+html.js .booking-page .reveal-left {
+  transform: translateX(-24px);
+}
+
+html.js .home-grid-v2 .reveal-right,
+html.js .content-page .reveal-right,
+html.js .speaking-balanced .reveal-right,
+html.js .booking-page .reveal-right {
+  transform: translateX(24px);
+}
+
+html.js .home-grid-v2 .reveal-scale,
+html.js .content-page .reveal-scale,
+html.js .speaking-balanced .reveal-scale,
+html.js .booking-page .reveal-scale {
+  transform: scale(.975);
+}
+
+html.js .home-grid-v2 .reveal-image,
+html.js .content-page .reveal-image,
+html.js .speaking-balanced .reveal-image,
+html.js .booking-page .reveal-image {
+  clip-path: inset(0 0 14% 0);
+  transform: scale(.985);
+}
+
+html.js .home-grid-v2 .is-visible,
+html.js .content-page .is-visible,
+html.js .speaking-balanced .is-visible,
+html.js .booking-page .is-visible {
+  opacity: 1;
+  transform: translate(0,0) scale(1);
+  clip-path: inset(0);
+}
+
+html:not(.js) .home-grid-v2 .reveal-on-scroll,
+html:not(.js) .content-page .reveal-on-scroll,
+html:not(.js) .speaking-balanced .reveal-on-scroll,
+html:not(.js) .booking-page .reveal-on-scroll,
+html:not(.js) .home-grid-v2 .motion-fade,
+html:not(.js) .home-grid-v2 .hero-title span {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.stat-count {
+  font-variant-numeric: tabular-nums;
+}
+
+@media(max-width:1080px) {
+  .speaking-balanced-inner {
+    width: min(86vw,980px);
+    grid-template-columns: 1fr;
+  }
+
+  .speaking-hero-support {
+    min-height: 0;
+    grid-template-columns: repeat(3,1fr);
+    border-left: 0;
+    border-top: 1px solid rgba(249,245,245,.2);
+    padding: 20px 0 0;
+  }
+
+  .speaking-hero-support:before {
+    left: 0;
+    top: -1px;
+    width: 42%;
+    height: 3px;
+  }
+}
+
+@media(max-width:760px) {
+  .home-grid-v2,
+  .content-page,
+  .speaking-balanced,
+  .booking-page {
+    --header-height: 66px;
+  }
+
+  .home-v2-logo img,
+  .brand-logo img {
+    width: 112px;
+    max-height: 42px;
+  }
+
+  .home-v2-header {
+    position: sticky;
+  }
+
+  .home-grid-v2 .nav-links,
+  .content-page .nav-links,
+  .speaking-balanced .nav-links,
+  .booking-page .nav-links {
+    top: var(--header-height);
+  }
+
+  .home-v2-hero .hero-media-stack:after,
+  .content-hero-media:after,
+  .services-hero .content-hero-media:after {
+    background: linear-gradient(90deg,rgba(40,70,75,.96),rgba(40,70,75,.72)),linear-gradient(0deg,rgba(40,70,75,.76),transparent 50%);
+  }
+
+  .speaking-balanced-inner {
+    width: calc(100% - 32px);
+  }
+
+  .speaking-hero-support {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .speaking-hero-support span {
+    font-size: 1rem;
+    letter-spacing: .12em;
+  }
+
+  html.js .home-grid-v2 .reveal,
+  html.js .home-grid-v2 .reveal-up,
+  html.js .home-grid-v2 .reveal-left,
+  html.js .home-grid-v2 .reveal-right,
+  html.js .home-grid-v2 .reveal-scale,
+  html.js .home-grid-v2 .reveal-image,
+  html.js .content-page .reveal,
+  html.js .content-page .reveal-up,
+  html.js .content-page .reveal-left,
+  html.js .content-page .reveal-right,
+  html.js .content-page .reveal-scale,
+  html.js .content-page .reveal-image,
+  html.js .speaking-balanced .reveal,
+  html.js .speaking-balanced .reveal-up,
+  html.js .speaking-balanced .reveal-left,
+  html.js .speaking-balanced .reveal-right,
+  html.js .speaking-balanced .reveal-scale,
+  html.js .speaking-balanced .reveal-image,
+  html.js .booking-page .reveal,
+  html.js .booking-page .reveal-up,
+  html.js .booking-page .reveal-left,
+  html.js .booking-page .reveal-right,
+  html.js .booking-page .reveal-scale,
+  html.js .booking-page .reveal-image {
+    transition-duration: 420ms;
+    transform: translateY(12px);
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .home-grid-v2 *,
+  .content-page *,
+  .speaking-balanced *,
+  .booking-page * {
+    animation: none !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .home-grid-v2 .reveal,
+  .home-grid-v2 .reveal-up,
+  .home-grid-v2 .reveal-left,
+  .home-grid-v2 .reveal-right,
+  .home-grid-v2 .reveal-scale,
+  .home-grid-v2 .reveal-image,
+  .home-grid-v2 .reveal-on-scroll,
+  .content-page .reveal,
+  .content-page .reveal-up,
+  .content-page .reveal-left,
+  .content-page .reveal-right,
+  .content-page .reveal-scale,
+  .content-page .reveal-image,
+  .content-page .reveal-on-scroll,
+  .speaking-balanced .reveal,
+  .speaking-balanced .reveal-up,
+  .speaking-balanced .reveal-left,
+  .speaking-balanced .reveal-right,
+  .speaking-balanced .reveal-scale,
+  .speaking-balanced .reveal-image,
+  .speaking-balanced .reveal-on-scroll,
+  .booking-page .reveal,
+  .booking-page .reveal-up,
+  .booking-page .reveal-left,
+  .booking-page .reveal-right,
+  .booking-page .reveal-scale,
+  .booking-page .reveal-image,
+  .booking-page .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
+/* Focused reveal bug fix: public-site reveals are one-time and visible by default */
+.home-grid-v2 .reveal-on-scroll,
+.content-page .reveal-on-scroll,
+.speaking-balanced .reveal-on-scroll,
+.booking-page .reveal-on-scroll,
+.home-grid-v2 .reveal,
+.home-grid-v2 .reveal-up,
+.home-grid-v2 .reveal-left,
+.home-grid-v2 .reveal-right,
+.home-grid-v2 .reveal-scale,
+.home-grid-v2 .reveal-image,
+.home-grid-v2 .reveal-line,
+.home-grid-v2 .reveal-stagger,
+.content-page .reveal,
+.content-page .reveal-up,
+.content-page .reveal-left,
+.content-page .reveal-right,
+.content-page .reveal-scale,
+.content-page .reveal-image,
+.content-page .reveal-line,
+.content-page .reveal-stagger,
+.speaking-balanced .reveal,
+.speaking-balanced .reveal-up,
+.speaking-balanced .reveal-left,
+.speaking-balanced .reveal-right,
+.speaking-balanced .reveal-scale,
+.speaking-balanced .reveal-image,
+.speaking-balanced .reveal-line,
+.speaking-balanced .reveal-stagger,
+.booking-page .reveal,
+.booking-page .reveal-up,
+.booking-page .reveal-left,
+.booking-page .reveal-right,
+.booking-page .reveal-scale,
+.booking-page .reveal-image,
+.booking-page .reveal-line,
+.booking-page .reveal-stagger {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0);
+}
+
+html.js .home-grid-v2 .reveal-on-scroll:not(.is-visible),
+html.js .home-grid-v2 .reveal:not(.is-visible),
+html.js .home-grid-v2 .reveal-up:not(.is-visible),
+html.js .home-grid-v2 .reveal-left:not(.is-visible),
+html.js .home-grid-v2 .reveal-right:not(.is-visible),
+html.js .home-grid-v2 .reveal-scale:not(.is-visible),
+html.js .home-grid-v2 .reveal-image:not(.is-visible),
+html.js .home-grid-v2 .reveal-line:not(.is-visible),
+html.js .home-grid-v2 .reveal-stagger:not(.is-visible),
+html.js .content-page .reveal-on-scroll:not(.is-visible),
+html.js .content-page .reveal:not(.is-visible),
+html.js .content-page .reveal-up:not(.is-visible),
+html.js .content-page .reveal-left:not(.is-visible),
+html.js .content-page .reveal-right:not(.is-visible),
+html.js .content-page .reveal-scale:not(.is-visible),
+html.js .content-page .reveal-image:not(.is-visible),
+html.js .content-page .reveal-line:not(.is-visible),
+html.js .content-page .reveal-stagger:not(.is-visible),
+html.js .speaking-balanced .reveal-on-scroll:not(.is-visible),
+html.js .speaking-balanced .reveal:not(.is-visible),
+html.js .speaking-balanced .reveal-up:not(.is-visible),
+html.js .speaking-balanced .reveal-left:not(.is-visible),
+html.js .speaking-balanced .reveal-right:not(.is-visible),
+html.js .speaking-balanced .reveal-scale:not(.is-visible),
+html.js .speaking-balanced .reveal-image:not(.is-visible),
+html.js .speaking-balanced .reveal-line:not(.is-visible),
+html.js .speaking-balanced .reveal-stagger:not(.is-visible),
+html.js .booking-page .reveal-on-scroll:not(.is-visible),
+html.js .booking-page .reveal:not(.is-visible),
+html.js .booking-page .reveal-up:not(.is-visible),
+html.js .booking-page .reveal-left:not(.is-visible),
+html.js .booking-page .reveal-right:not(.is-visible),
+html.js .booking-page .reveal-scale:not(.is-visible),
+html.js .booking-page .reveal-image:not(.is-visible),
+html.js .booking-page .reveal-line:not(.is-visible),
+html.js .booking-page .reveal-stagger:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(22px);
+  clip-path: inset(0 0 14% 0);
+}
+
+html.js .home-grid-v2 .reveal-left:not(.is-visible),
+html.js .content-page .reveal-left:not(.is-visible),
+html.js .speaking-balanced .reveal-left:not(.is-visible),
+html.js .booking-page .reveal-left:not(.is-visible) {
+  transform: translateX(-24px);
+}
+
+html.js .home-grid-v2 .reveal-right:not(.is-visible),
+html.js .content-page .reveal-right:not(.is-visible),
+html.js .speaking-balanced .reveal-right:not(.is-visible),
+html.js .booking-page .reveal-right:not(.is-visible) {
+  transform: translateX(24px);
+}
+
+html.js .home-grid-v2 .reveal-scale:not(.is-visible),
+html.js .content-page .reveal-scale:not(.is-visible),
+html.js .speaking-balanced .reveal-scale:not(.is-visible),
+html.js .booking-page .reveal-scale:not(.is-visible) {
+  transform: scale(.975);
+}
+
+html.js .home-grid-v2 .reveal-on-scroll.is-visible,
+html.js .home-grid-v2 .reveal.is-visible,
+html.js .home-grid-v2 .reveal-up.is-visible,
+html.js .home-grid-v2 .reveal-left.is-visible,
+html.js .home-grid-v2 .reveal-right.is-visible,
+html.js .home-grid-v2 .reveal-scale.is-visible,
+html.js .home-grid-v2 .reveal-image.is-visible,
+html.js .home-grid-v2 .reveal-line.is-visible,
+html.js .home-grid-v2 .reveal-stagger.is-visible,
+html.js .content-page .reveal-on-scroll.is-visible,
+html.js .content-page .reveal.is-visible,
+html.js .content-page .reveal-up.is-visible,
+html.js .content-page .reveal-left.is-visible,
+html.js .content-page .reveal-right.is-visible,
+html.js .content-page .reveal-scale.is-visible,
+html.js .content-page .reveal-image.is-visible,
+html.js .content-page .reveal-line.is-visible,
+html.js .content-page .reveal-stagger.is-visible,
+html.js .speaking-balanced .reveal-on-scroll.is-visible,
+html.js .speaking-balanced .reveal.is-visible,
+html.js .speaking-balanced .reveal-up.is-visible,
+html.js .speaking-balanced .reveal-left.is-visible,
+html.js .speaking-balanced .reveal-right.is-visible,
+html.js .speaking-balanced .reveal-scale.is-visible,
+html.js .speaking-balanced .reveal-image.is-visible,
+html.js .speaking-balanced .reveal-line.is-visible,
+html.js .speaking-balanced .reveal-stagger.is-visible,
+html.js .booking-page .reveal-on-scroll.is-visible,
+html.js .booking-page .reveal.is-visible,
+html.js .booking-page .reveal-up.is-visible,
+html.js .booking-page .reveal-left.is-visible,
+html.js .booking-page .reveal-right.is-visible,
+html.js .booking-page .reveal-scale.is-visible,
+html.js .booking-page .reveal-image.is-visible,
+html.js .booking-page .reveal-line.is-visible,
+html.js .booking-page .reveal-stagger.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  clip-path: inset(0);
+}
+
+/* Sports Management landing page */
+.sports-management-page {
+  background: var(--nxt-snow);
+}
+
+.sports-management-page .nav-links {
+  gap: clamp(10px,1.35vw,20px);
+}
+
+.sports-management-page .nav-links a {
+  font-size: clamp(.78rem,.82vw,.9rem);
+}
+
+.sports-management-hero {
+  position: relative;
+  min-height: min(760px, calc(94vh - var(--header-height, 80px)));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--nxt-slate);
+  color: var(--nxt-snow);
+  padding: clamp(88px,9vw,130px) 0 clamp(58px,7vw,92px);
+}
+
+.sports-management-hero-bg,
+.sports-management-hero-bg:after,
+.sports-management-hero-bg img {
+  position: absolute;
+  inset: 0;
+}
+
+.sports-management-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  filter: saturate(1.02) contrast(1.04);
+}
+
+.sports-management-hero-bg:after {
+  content: "";
+  background:
+    linear-gradient(90deg,rgba(40,70,75,.97) 0%,rgba(40,70,75,.82) 42%,rgba(40,70,75,.38) 74%,rgba(40,70,75,.12) 100%),
+    linear-gradient(0deg,rgba(40,70,75,.72),transparent 54%);
+}
+
+.sports-management-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0,1.1fr) minmax(260px,.54fr);
+  align-items: end;
+  gap: clamp(28px,5vw,78px);
+}
+
+.sports-management-hero-copy {
+  max-width: 820px;
+}
+
+.sports-management-hero h1 {
+  color: var(--nxt-snow);
+  font-size: clamp(3rem,6vw,6.4rem);
+  line-height: .9;
+  text-transform: uppercase;
+  max-width: 12ch;
+}
+
+.sports-management-hero h1 span,
+.sports-management-hero h2 span {
+  display: block;
+}
+
+.sports-management-hero h2 {
+  color: var(--nxt-ice);
+  font-size: clamp(1.35rem,2.3vw,2.55rem);
+  line-height: 1.04;
+  text-transform: uppercase;
+  max-width: 18ch;
+}
+
+.sports-management-hero h2 span:nth-child(3) {
+  color: var(--nxt-copper);
+}
+
+.sports-management-hero p:not(.eyebrow),
+.sports-status-panel p {
+  color: rgba(249,245,245,.84);
+  max-width: 66ch;
+}
+
+.sports-status-panel {
+  border: 1px solid rgba(249,245,245,.2);
+  background: rgba(40,70,75,.7);
+  padding: clamp(22px,3vw,34px);
+  box-shadow: 0 24px 60px rgba(0,0,0,.22);
+}
+
+.sports-status-panel span,
+.sports-service-top span,
+.sports-section-head .eyebrow {
+  color: var(--nxt-ice);
+  font-size: var(--ui-label);
+  font-weight: 950;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.sports-status-panel strong {
+  display: block;
+  margin: 16px 0 12px;
+  color: var(--nxt-snow);
+  font-size: clamp(2rem,3.4vw,3.4rem);
+  line-height: .95;
+  text-transform: uppercase;
+}
+
+.sports-build-section,
+.whole-athlete-section,
+.sports-skills-section,
+.sports-ecosystem-section {
+  background: var(--nxt-snow);
+  color: var(--nxt-slate);
+  padding: var(--ui-section) 0;
+}
+
+.sports-services-section,
+.sports-safety-section,
+.sports-global-section {
+  background: var(--nxt-slate);
+  color: var(--nxt-snow);
+  padding: var(--ui-section) 0;
+}
+
+.sports-register-section {
+  background: var(--nxt-crimson);
+  color: var(--nxt-snow);
+  padding: var(--ui-section) 0;
+}
+
+.sports-build-grid,
+.sports-safety-grid,
+.sports-skills-grid,
+.sports-global-grid {
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  gap: var(--ui-gap);
+  align-items: start;
+}
+
+.sports-section-head {
+  max-width: 860px;
+  margin-bottom: clamp(28px,4vw,48px);
+}
+
+.sports-section-head h2,
+.sports-build-grid h2,
+.sports-safety-grid h2,
+.sports-skills-grid h2,
+.sports-global-grid h2,
+.sports-register-card h2 {
+  font-size: var(--ui-section-h2);
+  line-height: 1;
+  text-transform: uppercase;
+  max-width: 13ch;
+}
+
+.sports-services-section .sports-section-head h2,
+.sports-safety-section h2,
+.sports-global-section h2,
+.sports-register-card h2 {
+  color: var(--nxt-snow);
+}
+
+.sports-build-copy p,
+.sports-skills-grid p,
+.whole-athlete-section p,
+.sports-ecosystem-section p {
+  color: var(--color-text-muted);
+}
+
+.sports-services-section p,
+.sports-safety-section p,
+.sports-global-section p,
+.sports-register-card p {
+  color: rgba(249,245,245,.82);
+}
+
+.sports-service-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px;
+}
+
+.sports-service-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+  border: 1px solid rgba(249,245,245,.18);
+  background: linear-gradient(135deg,rgba(249,245,245,.08),rgba(249,245,245,.025));
+  padding: clamp(24px,3vw,36px);
+  transition: transform var(--motion-fast) ease, border-color var(--motion-fast) ease, box-shadow var(--motion-fast) ease;
+}
+
+.sports-service-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(52,228,234,.45);
+  box-shadow: 0 24px 58px rgba(0,0,0,.18);
+}
+
+.sports-service-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.sports-service-top strong {
+  border: 1px solid rgba(249,245,245,.24);
+  color: var(--nxt-snow);
+  padding: 8px 10px;
+  font-size: .74rem;
+  font-weight: 950;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.sports-service-card h3 {
+  color: var(--nxt-snow);
+  font-size: clamp(2rem,3vw,3.4rem);
+  line-height: .98;
+  text-transform: uppercase;
+}
+
+.sports-service-card ul,
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 1px;
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+  background: rgba(249,245,245,.18);
+}
+
+.sports-service-card li,
+.skills-list span {
+  background: rgba(249,245,245,.08);
+  color: var(--nxt-snow);
+  padding: 12px;
+  font-size: .78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.whole-athlete-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 1px;
+  background: rgba(40,70,75,.18);
+}
+
+.whole-athlete-grid article {
+  min-height: 250px;
+  background: rgba(249,245,245,.88);
+  padding: clamp(22px,2.8vw,34px);
+  transition: transform var(--motion-fast) ease, background var(--motion-fast) ease;
+}
+
+.whole-athlete-grid article:hover {
+  transform: translateY(-4px);
+  background: #fff;
+}
+
+.whole-athlete-grid span {
+  display: block;
+  margin-bottom: 56px;
+  color: var(--nxt-crimson);
+  font-size: clamp(1.5rem,2.4vw,2.6rem);
+  line-height: 1;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.skills-list {
+  margin: 0;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  background: rgba(40,70,75,.18);
+}
+
+.skills-list span {
+  background: rgba(249,245,245,.9);
+  color: var(--nxt-slate);
+}
+
+.ecosystem-flow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.ecosystem-flow article {
+  border: 1px solid rgba(40,70,75,.18);
+  background: rgba(249,245,245,.88);
+  padding: clamp(20px,2.5vw,30px);
+}
+
+.ecosystem-flow > strong {
+  display: grid;
+  place-items: center;
+  color: var(--nxt-crimson);
+  font-size: clamp(2rem,4vw,4rem);
+}
+
+.ecosystem-flow span {
+  display: block;
+  margin-bottom: 24px;
+  color: var(--nxt-slate);
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.sports-register-card {
+  max-width: 900px;
+}
+
+.sports-register-card .btn.secondary {
+  background: rgba(40,70,75,.94);
+  border-color: rgba(249,245,245,.22);
+  color: var(--nxt-snow);
+}
+
+@media(max-width:1180px) {
+  .sports-management-hero-grid,
+  .sports-build-grid,
+  .sports-safety-grid,
+  .sports-skills-grid,
+  .sports-global-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sports-service-grid,
+  .whole-athlete-grid,
+  .ecosystem-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .ecosystem-flow > strong {
+    min-height: 44px;
+  }
+}
+
+@media(max-width:760px) {
+  .sports-management-hero {
+    min-height: auto;
+    padding-top: 78px;
+  }
+
+  .sports-status-panel,
+  .sports-service-card,
+  .whole-athlete-grid article,
+  .ecosystem-flow article {
+    padding: 20px;
+  }
+
+  .sports-service-card {
+    min-height: 0;
+  }
+
+  .sports-service-top {
+    display: grid;
+    margin-bottom: 26px;
+  }
+
+  .sports-service-card ul,
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .whole-athlete-grid span {
+    margin-bottom: 28px;
+  }
+}
+
+/* Public nav capacity for Sports Management primary item */
+.home-grid-v2 .nav-links,
+.content-page .nav-links,
+.speaking-balanced .nav-links,
+.booking-page .nav-links {
+  gap: clamp(10px,1.25vw,20px);
+}
+
+.home-grid-v2 .nav-links a,
+.content-page .nav-links a,
+.speaking-balanced .nav-links a,
+.booking-page .nav-links a {
+  font-size: clamp(.76rem,.8vw,.9rem);
+}
+
+@media(max-width:1240px) {
+  .home-grid-v2 .nav-links,
+  .content-page .nav-links,
+  .speaking-balanced .nav-links,
+  .booking-page .nav-links {
+    gap: 12px;
+  }
+}

@@ -1,4 +1,6 @@
-﻿const toggle = document.querySelector('.nav-toggle');
+document.documentElement.classList.add('js');
+
+const toggle = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
 if (toggle && links) {
   toggle.setAttribute('aria-expanded', 'false');
@@ -349,4 +351,135 @@ if ('IntersectionObserver' in window && homeSections.length && homeRailLinks.len
     });
   }, { rootMargin: '-34% 0px -52% 0px', threshold: 0 });
   homeSections.forEach(section => homeSectionObserver.observe(section));
+}
+
+const publicMotionRoot = document.querySelector('.home-grid-v2, .content-page, .speaking-balanced, .booking-page');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (publicMotionRoot) {
+  const currentPath = window.location.pathname.replace(/\index\.html$/, '/');
+  document.querySelectorAll('.nav-links a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('mailto:')) return;
+    const url = new URL(href, window.location.href);
+    const linkPath = url.pathname.replace(/\index\.html$/, '/');
+    const isHome = linkPath === '/' && (currentPath === '/' || currentPath.endsWith('/NxtGen%20Website/'));
+    const isCurrent = linkPath !== '/' && currentPath.startsWith(linkPath);
+    if (isHome || isCurrent) link.setAttribute('aria-current', 'page');
+  });
+
+  const revealSelectors = [
+    '.reveal-on-scroll',
+    '.section-head',
+    '.balanced-section-head',
+    '.pillar-grid article',
+    '.proof-grid article',
+    '.service-list article',
+    '.sports-collage img',
+    '.stage-device',
+    '.person-card-v2',
+    '.reason-list-v2 article',
+    '.logo-word-grid span',
+    '.decision-routes-v2 a',
+    '.services-grid article',
+    '.values-card-grid article',
+    '.edi-story-grid article',
+    '.edi-closing-card',
+    '.contact-card-grid article',
+    '.blog-card',
+    '.speaking-equal-speaker',
+    '.balanced-theme-matrix article',
+    '.balanced-process-line article',
+    '.balanced-room-list span',
+    '.speaking-hero-support span',
+    '.sports-service-card',
+    '.whole-athlete-grid article',
+    '.skills-list span',
+    '.ecosystem-flow article',
+    '.sports-status-panel'
+  ];
+
+  const revealTargets = Array.from(publicMotionRoot.querySelectorAll(revealSelectors.join(',')));
+  const lineRevealTargets = Array.from(publicMotionRoot.querySelectorAll('.hero-title span, .speaking-balanced-hero h2 span'));
+
+  revealTargets.forEach((item, index) => {
+    item.classList.add('reveal');
+    if (item.matches('img,.stage-device,.blog-card-media,.content-hero-media')) item.classList.add('reveal-image');
+    const groupIndex = index % 8;
+    item.style.transitionDelay = `${Math.min(groupIndex * 75, 525)}ms`;
+  });
+
+  lineRevealTargets.forEach((line, index) => {
+    line.classList.add('reveal-up');
+    line.style.transitionDelay = `${180 + index * 95}ms`;
+  });
+
+  const allRevealTargets = Array.from(new Set([...revealTargets, ...lineRevealTargets]));
+
+  publicMotionRoot.querySelectorAll('.hero-proof strong, .proof-grid article strong').forEach(item => {
+    const raw = item.textContent.trim();
+    if (/^0?\d+$/.test(raw)) {
+      item.dataset.countTo = String(parseInt(raw, 10));
+      item.dataset.countFormat = raw.startsWith('0') ? 'pad2' : 'plain';
+      item.classList.add('stat-count');
+    }
+  });
+
+  const animateCount = el => {
+    if (reduceMotion || el.dataset.counted === 'true') return;
+    const target = Number(el.dataset.countTo || 0);
+    const pad = el.dataset.countFormat === 'pad2';
+    const duration = 650;
+    const start = performance.now();
+    const tick = now => {
+      const progress = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const value = Math.round(target * eased);
+      el.textContent = pad ? String(value).padStart(2, '0') : String(value);
+      if (progress < 1) requestAnimationFrame(tick);
+      else {
+        el.textContent = pad ? String(target).padStart(2, '0') : String(target);
+        el.dataset.counted = 'true';
+      }
+    };
+    el.textContent = pad ? '00' : '0';
+    requestAnimationFrame(tick);
+  };
+
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const polishObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        entry.target.querySelectorAll?.('.stat-count').forEach(animateCount);
+        if (entry.target.classList.contains('stat-count')) animateCount(entry.target);
+        polishObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+    allRevealTargets.forEach(item => polishObserver.observe(item));
+    publicMotionRoot.querySelectorAll('.stat-count').forEach(item => polishObserver.observe(item));
+  } else {
+    allRevealTargets.forEach(item => item.classList.add('is-visible'));
+    publicMotionRoot.querySelectorAll('.stat-count').forEach(item => {
+      const target = Number(item.dataset.countTo || 0);
+      item.textContent = item.dataset.countFormat === 'pad2' ? String(target).padStart(2, '0') : String(target);
+    });
+  }
+
+  if (!reduceMotion && window.innerWidth > 760) {
+    const heroImage = publicMotionRoot.querySelector('.hero-main-img, .content-hero-media img');
+    if (heroImage) {
+      let ticking = false;
+      const updateHeroDrift = () => {
+        const y = Math.max(-20, Math.min(20, window.scrollY * 0.025));
+        heroImage.style.transform = `translateY(${y}px) scale(1.02)`;
+        ticking = false;
+      };
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          requestAnimationFrame(updateHeroDrift);
+          ticking = true;
+        }
+      }, { passive: true });
+    }
+  }
 }
