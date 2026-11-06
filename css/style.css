@@ -3882,3 +3882,34 @@ html.js .booking-page .reveal-stagger.is-visible {
     gap: 12px;
   }
 }
+
+/* Sports Platform login link (public navigation) */
+.nav-links a.nav-login {
+  padding: 8px 12px;
+  border: 1px solid rgba(52,228,234,.6);
+  border-radius: 4px;
+  color: var(--nxt-ice, #34E4EA);
+  white-space: nowrap;
+  transition: background .18s ease, border-color .18s ease, color .18s ease;
+}
+.nav-links a.nav-login::after { display: none; }
+.nav-links a.nav-login:hover,
+.nav-links a.nav-login:focus-visible {
+  background: rgba(52,228,234,.12);
+  border-color: var(--nxt-ice, #34E4EA);
+  color: var(--nxt-snow, #F9F5F5);
+}
+@media (max-width:1240px) {
+  .nav-links a.nav-login { margin-top: 6px; align-self: stretch; text-align: center; }
+}
+.sports-platform-access {
+  margin-top: 18px;
+  font-size: .95rem;
+  color: rgba(249,245,245,.82);
+}
+.sports-platform-access a {
+  color: var(--nxt-ice, #34E4EA);
+  font-weight: 800;
+  border-bottom: 1px solid currentColor;
+}
+.sports-platform-access a:hover { color: var(--nxt-snow, #F9F5F5); }

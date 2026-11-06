@@ -1,0 +1,161 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function userPath(uid) { return /databases/$(database)/documents/users/$(uid); }
+    function hasProfile() { return signedIn() && exists(userPath(request.auth.uid)); }
+    function profile() { return get(userPath(request.auth.uid)).data; }
+    function activeUser() { return hasProfile() && profile().active == true; }
+    function role() { return profile().role; }
+    function isRole(roles) { return activeUser() && role() in roles; }
+    function isAdmin() { return isRole(["admin"]); }
+    function isModerator() { return isRole(["admin", "moderator"]); }
+    function isStaff() { return isRole(["admin", "manager", "coach", "organisation"]); }
+    function isOwnUser(uid) { return signedIn() && request.auth.uid == uid; }
+    function isOwnAthlete(athleteId) { return activeUser() && role() == "athlete" && profile().athleteId == athleteId; }
+    function activeGuardianLink(athleteId) {
+      return exists(/databases/$(database)/documents/guardianAthleteLinks/$(request.auth.uid + "_" + athleteId)) &&
+        get(/databases/$(database)/documents/guardianAthleteLinks/$(request.auth.uid + "_" + athleteId)).data.active == true;
+    }
+    function activeCoachAssignment(athleteId) {
+      return exists(/databases/$(database)/documents/athleteCoachAssignments/$(request.auth.uid + "_" + athleteId)) &&
+        get(/databases/$(database)/documents/athleteCoachAssignments/$(request.auth.uid + "_" + athleteId)).data.active == true;
+    }
+    function activeManagerAssignment(athleteId) {
+      return exists(/databases/$(database)/documents/athleteManagerAssignments/$(request.auth.uid + "_" + athleteId)) &&
+        get(/databases/$(database)/documents/athleteManagerAssignments/$(request.auth.uid + "_" + athleteId)).data.active == true;
+    }
+    function canReadAthlete(athleteId) {
+      return isAdmin() || isOwnAthlete(athleteId) || activeGuardianLink(athleteId) || activeCoachAssignment(athleteId) || activeManagerAssignment(athleteId);
+    }
+
+    function canWriteAthleteDevelopment(athleteId) {
+      return isAdmin() || activeManagerAssignment(athleteId) || activeCoachAssignment(athleteId);
+    }
+    match /users/{uid} {
+      allow read: if isOwnUser(uid) || isAdmin();
+      allow create, update: if isAdmin();
+      allow delete: if false;
+    }
+
+    match /athletes/{athleteId} {
+      allow read: if canReadAthlete(athleteId);
+      allow create, update: if isAdmin() || activeManagerAssignment(athleteId);
+      allow delete: if false;
+    }
+
+    match /teams/{teamId} {
+      allow read: if isStaff();
+      allow create, update: if isRole(["admin", "manager"]);
+      allow delete: if false;
+    }
+
+    match /organisations/{organisationId} {
+      allow read: if isStaff();
+      allow create, update: if isAdmin();
+      allow delete: if false;
+    }
+
+    match /guardianAthleteLinks/{linkId} {
+      allow read: if isAdmin() || (activeUser() && (resource.data.guardianUid == request.auth.uid || resource.data.athleteId == profile().athleteId));
+      allow create, update: if isAdmin() || isRole(["manager"]);
+      allow delete: if false;
+    }
+
+    match /athleteCoachAssignments/{assignmentId} {
+      allow read: if isAdmin() || (activeUser() && (resource.data.coachUid == request.auth.uid || resource.data.athleteId == profile().athleteId));
+      allow create, update: if isAdmin() || isRole(["manager"]);
+      allow delete: if false;
+    }
+
+    match /athleteManagerAssignments/{assignmentId} {
+      allow read: if isAdmin() || (activeUser() && resource.data.managerUid == request.auth.uid);
+      allow create, update: if isAdmin();
+      allow delete: if false;
+    }
+
+    match /teamMembers/{memberId} {
+      allow read: if isStaff() || isOwnAthlete(resource.data.athleteId);
+      allow create, update: if isAdmin() || isRole(["manager", "coach"]);
+      allow delete: if false;
+    }
+
+    match /organisationMembers/{memberId} {
+      allow read: if isAdmin() || (activeUser() && resource.data.userUid == request.auth.uid);
+      allow create, update: if isAdmin();
+      allow delete: if false;
+    }
+
+
+    match /athleteGoals/{recordId} {
+      allow read: if canReadAthlete(resource.data.athleteId);
+      allow create, update: if canWriteAthleteDevelopment(request.resource.data.athleteId);
+      allow delete: if false;
+    }
+
+    match /athleteReviews/{recordId} {
+      allow read: if canReadAthlete(resource.data.athleteId);
+      allow create, update: if canWriteAthleteDevelopment(request.resource.data.athleteId);
+      allow delete: if false;
+    }
+
+    match /athleteNotes/{recordId} {
+      allow read: if isAdmin() || activeManagerAssignment(resource.data.athleteId) || activeCoachAssignment(resource.data.athleteId);
+      allow create, update: if canWriteAthleteDevelopment(request.resource.data.athleteId);
+      allow delete: if false;
+    }
+
+    match /athletePhysicalRecords/{recordId} {
+      allow read: if canReadAthlete(resource.data.athleteId);
+      allow create, update: if canWriteAthleteDevelopment(request.resource.data.athleteId);
+      allow delete: if false;
+    }
+
+    match /athleteNutritionRecords/{recordId} {
+      allow read: if canReadAthlete(resource.data.athleteId);
+      allow create, update: if canWriteAthleteDevelopment(request.resource.data.athleteId);
+      allow delete: if false;
+    }
+
+    match /athleteWellbeingCheckins/{recordId} {
+      allow read: if isAdmin() || activeManagerAssignment(resource.data.athleteId) || activeCoachAssignment(resource.data.athleteId) || isOwnAthlete(resource.data.athleteId) || activeGuardianLink(resource.data.athleteId);
+      allow create, update: if canWriteAthleteDevelopment(request.resource.data.athleteId);
+      allow delete: if false;
+    }
+
+    match /athleteDevelopmentRecords/{recordId} {
+      allow read: if canReadAthlete(resource.data.athleteId);
+      allow create, update: if canWriteAthleteDevelopment(request.resource.data.athleteId);
+      allow delete: if false;
+    }
+
+    match /athletePersonalDevelopmentRecords/{recordId} {
+      allow read: if canReadAthlete(resource.data.athleteId);
+      allow create, update: if canWriteAthleteDevelopment(request.resource.data.athleteId);
+      allow delete: if false;
+    }
+
+    match /athleteEducationRecords/{recordId} {
+      allow read: if canReadAthlete(resource.data.athleteId);
+      allow create, update: if canWriteAthleteDevelopment(request.resource.data.athleteId);
+      allow delete: if false;
+    }
+    match /safeguardingReports/{reportId} {
+      allow read: if isModerator();
+      allow create: if activeUser() && request.resource.data.reporterUid == request.auth.uid;
+      allow update: if isModerator();
+      allow delete: if false;
+    }
+
+    match /auditLogs/{auditId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() || isRole(["manager", "moderator"]);
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

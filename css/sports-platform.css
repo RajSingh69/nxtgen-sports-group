@@ -1,0 +1,565 @@
+.sports-platform-app {
+  min-height: 100vh;
+  background: var(--nxt-snow);
+  color: var(--nxt-slate);
+}
+
+.sports-app-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+  padding: 12px clamp(16px,4vw,42px);
+  border-bottom: 1px solid rgba(40,70,75,.14);
+  background: rgba(249,245,245,.94);
+  backdrop-filter: blur(16px);
+}
+
+.sports-app-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--nxt-slate);
+  font-weight: 950;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.sports-app-brand img {
+  width: 112px;
+  max-height: 42px;
+  object-fit: contain;
+}
+
+.sports-user-cluster {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.sports-user-cluster [data-sports-user] {
+  display: grid;
+  text-align: right;
+}
+
+.sports-user-cluster strong {
+  font-size: .92rem;
+}
+
+.sports-user-cluster span {
+  color: var(--nxt-teal);
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.sports-user-cluster button,
+.sports-button,
+.sports-link-button,
+.sports-app-nav a,
+.athlete-row a {
+  min-height: 42px;
+  border: 1px solid rgba(40,70,75,.18);
+  border-radius: 4px;
+  background: rgba(40,70,75,.06);
+  color: var(--nxt-slate);
+  padding: 0 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  cursor: pointer;
+}
+
+.sports-button {
+  background: var(--nxt-crimson);
+  color: var(--nxt-snow);
+  border-color: var(--nxt-crimson);
+}
+
+.sports-link-button {
+  background: transparent;
+}
+
+.sports-app-shell {
+  width: min(1220px,calc(100% - 32px));
+  margin: 0 auto;
+  padding: clamp(24px,4vw,48px) 0 80px;
+}
+
+.sports-message {
+  margin: 0 0 18px;
+  padding: 13px 15px;
+  border-left: 4px solid var(--nxt-cyan);
+  background: rgba(44,140,153,.1);
+}
+
+.sports-message[data-tone="error"] {
+  border-left-color: var(--nxt-crimson);
+  background: rgba(147,22,33,.1);
+}
+
+.sports-login-card {
+  min-height: calc(100vh - 170px);
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(320px,420px);
+  gap: clamp(28px,7vw,88px);
+  align-items: center;
+}
+
+.sports-login-card h1,
+.sports-hero-panel h1,
+.sports-empty h1 {
+  color: var(--nxt-slate);
+  font-size: clamp(2.3rem,5vw,5rem);
+  line-height: .95;
+  text-transform: uppercase;
+  max-width: 12ch;
+}
+
+.sports-login-card p,
+.sports-hero-panel p,
+.sports-empty p,
+.sports-empty-line {
+  color: rgba(40,70,75,.75);
+}
+
+.sports-login-card form,
+.sports-panel,
+.sports-section-grid article,
+.sports-metrics article,
+.sports-profile-tabs article,
+.sports-empty,
+.sports-hero-panel {
+  border: 1px solid rgba(40,70,75,.14);
+  background: rgba(255,255,255,.72);
+  box-shadow: 0 24px 70px rgba(40,70,75,.1);
+}
+
+.sports-login-card form {
+  display: grid;
+  gap: 16px;
+  padding: clamp(22px,3vw,34px);
+}
+
+.sports-platform-app label {
+  color: var(--nxt-slate);
+}
+
+.sports-platform-app input,
+.sports-platform-app select,
+.sports-platform-app textarea {
+  background: #fff;
+  color: var(--nxt-slate);
+  border-color: rgba(40,70,75,.22);
+}
+
+.sports-platform-app input:focus,
+.sports-platform-app select:focus,
+.sports-platform-app textarea:focus {
+  border-color: var(--nxt-cyan);
+  box-shadow: 0 0 0 3px rgba(44,140,153,.14);
+}
+
+.sports-hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: 24px;
+  align-items: end;
+  padding: clamp(22px,4vw,42px);
+  margin-bottom: 20px;
+  background: linear-gradient(135deg,rgba(40,70,75,.96),rgba(50,103,113,.9));
+  color: var(--nxt-snow);
+}
+
+.sports-hero-panel.compact h1 {
+  max-width: 18ch;
+}
+
+.sports-hero-panel h1,
+.sports-hero-panel p {
+  color: var(--nxt-snow);
+}
+
+.sports-hero-panel dl,
+.sports-metrics,
+.sports-section-grid,
+.sports-profile-tabs {
+  display: grid;
+  gap: 14px;
+}
+
+.sports-hero-panel dl {
+  grid-template-columns: repeat(3,minmax(110px,1fr));
+  margin: 0;
+}
+
+.sports-hero-panel dl div,
+.sports-metrics article {
+  border: 1px solid rgba(249,245,245,.18);
+  background: rgba(249,245,245,.08);
+  padding: 14px;
+}
+
+.sports-hero-panel dt,
+.sports-metrics span,
+.sports-panel-head span,
+.sports-section-grid h2,
+.sports-profile-tabs h2 {
+  color: var(--nxt-cyan);
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.sports-hero-panel dd {
+  margin: 5px 0 0;
+  font-weight: 950;
+}
+
+.sports-app-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 18px;
+}
+
+.sports-app-nav a {
+  display: inline-flex;
+  align-items: center;
+  background: #fff;
+}
+
+.sports-metrics {
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  margin-bottom: 20px;
+}
+
+.sports-metrics article {
+  background: var(--nxt-slate);
+  color: var(--nxt-snow);
+}
+
+.sports-metrics strong {
+  display: block;
+  margin-top: 14px;
+  font-size: clamp(2rem,4vw,3.6rem);
+  line-height: .9;
+}
+
+.sports-section-grid,
+.sports-profile-tabs {
+  grid-template-columns: repeat(2,minmax(0,1fr));
+}
+
+.sports-section-grid article,
+.sports-profile-tabs article,
+.sports-panel,
+.sports-empty {
+  padding: clamp(18px,2.5vw,28px);
+}
+
+.sports-section-grid h2,
+.sports-profile-tabs h2 {
+  margin-bottom: 14px;
+  color: var(--nxt-crimson);
+}
+
+.sports-panel-head,
+.athlete-row,
+.sports-filter-row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sports-panel-head {
+  margin-bottom: 18px;
+}
+
+.sports-panel-head h1,
+.sports-panel-head h2 {
+  margin: 0;
+  color: var(--nxt-slate);
+  font-size: clamp(1.6rem,3vw,2.8rem);
+  text-transform: uppercase;
+}
+
+.sports-filter-row {
+  margin-bottom: 14px;
+}
+
+.sports-filter-row input,
+.sports-filter-row select {
+  min-width: 0;
+}
+
+.athlete-directory {
+  display: grid;
+  gap: 10px;
+}
+
+.athlete-row {
+  min-height: 74px;
+  border: 1px solid rgba(40,70,75,.12);
+  background: rgba(40,70,75,.035);
+  padding: 13px;
+}
+
+.athlete-row strong,
+.athlete-row span {
+  display: block;
+}
+
+.athlete-row span {
+  color: rgba(40,70,75,.72);
+}
+
+.athlete-row a {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.sports-empty {
+  padding: clamp(24px,4vw,44px);
+}
+
+.sports-empty code {
+  color: var(--nxt-crimson);
+  overflow-wrap: anywhere;
+}
+
+@media(max-width:980px) {
+  .sports-login-card,
+  .sports-hero-panel,
+  .sports-metrics,
+  .sports-section-grid,
+  .sports-profile-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .sports-hero-panel dl {
+    grid-template-columns: 1fr;
+  }
+
+  .sports-filter-row,
+  .athlete-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@media(max-width:680px) {
+  .sports-app-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sports-user-cluster {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sports-user-cluster [data-sports-user] {
+    text-align: left;
+  }
+
+  .sports-app-brand img {
+    width: 96px;
+  }
+
+  .sports-app-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .sports-platform-app * {
+    transition-duration: 1ms !important;
+    animation: none !important;
+  }
+}
+/* Phase 2 athlete management */
+.sports-create-panel {
+  margin-bottom: 18px;
+  border: 1px solid rgba(40,70,75,.14);
+  background: rgba(40,70,75,.035);
+  padding: 14px;
+}
+
+.sports-create-panel summary {
+  cursor: pointer;
+  color: var(--nxt-crimson);
+  font-weight: 950;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.athlete-create-form,
+.record-form,
+.relationship-form {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.athlete-create-form h3,
+.record-form h3,
+.relationship-form h3 {
+  grid-column: 1 / -1;
+  margin: 10px 0 0;
+  color: var(--nxt-slate);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.athlete-create-form .full,
+.record-form label:has(textarea),
+.relationship-form h3 {
+  grid-column: 1 / -1;
+}
+
+.athlete-profile-header {
+  display: grid;
+  grid-template-columns: 112px minmax(0,1fr) minmax(260px,.75fr);
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 16px;
+  border: 1px solid rgba(40,70,75,.14);
+  background: linear-gradient(135deg,rgba(40,70,75,.96),rgba(50,103,113,.9));
+  color: var(--nxt-snow);
+  padding: clamp(18px,3vw,30px);
+}
+
+.athlete-profile-header img {
+  width: 112px;
+  height: 112px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: rgba(249,245,245,.12);
+}
+
+.athlete-profile-header h1 {
+  margin-bottom: 8px;
+  color: var(--nxt-snow);
+  font-size: clamp(2rem,4vw,4rem);
+  line-height: .95;
+  text-transform: uppercase;
+}
+
+.athlete-profile-header p {
+  color: rgba(249,245,245,.82);
+}
+
+.athlete-profile-header dl {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.athlete-profile-header dl div {
+  border: 1px solid rgba(249,245,245,.16);
+  background: rgba(249,245,245,.08);
+  padding: 12px;
+}
+
+.athlete-profile-header dt,
+.overview-grid span {
+  color: var(--nxt-ice);
+  font-size: .7rem;
+  font-weight: 950;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.athlete-profile-header dd {
+  margin: 4px 0 0;
+  font-weight: 950;
+}
+
+.athlete-profile-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.athlete-profile-nav button {
+  min-height: 38px;
+  border: 1px solid rgba(40,70,75,.16);
+  background: #fff;
+  color: var(--nxt-slate);
+  padding: 0 12px;
+  border-radius: 4px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.athlete-profile-nav button.is-active {
+  background: var(--nxt-crimson);
+  border-color: var(--nxt-crimson);
+  color: var(--nxt-snow);
+}
+
+.athlete-profile-sections > div {
+  display: none;
+}
+
+.athlete-profile-sections > div.is-active {
+  display: grid;
+  gap: 16px;
+}
+
+.overview-grid,
+.relationship-grid,
+.record-list {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 12px;
+}
+
+.overview-grid article,
+.relationship-grid article,
+.record-list article,
+.record-form,
+.relationship-form {
+  border: 1px solid rgba(40,70,75,.14);
+  background: rgba(255,255,255,.72);
+  padding: 16px;
+}
+
+.record-form,
+.relationship-form {
+  box-shadow: none;
+}
+
+.record-list article p {
+  margin: 0 0 10px;
+}
+
+@media(max-width:980px) {
+  .athlete-create-form,
+  .record-form,
+  .relationship-form,
+  .athlete-profile-header,
+  .overview-grid,
+  .relationship-grid,
+  .record-list {
+    grid-template-columns: 1fr;
+  }
+
+  .athlete-profile-header dl {
+    grid-template-columns: 1fr;
+  }
+}
